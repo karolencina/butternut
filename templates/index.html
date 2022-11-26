@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Butternut Squash</title>
+</head>
+<body>
+<div id="add_item">
+    <form action="/add_items" method="POST">
+        <select name="select_items">
+            {% for item in ingredients %}
+                <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Add item">
+    </form>
+</div>
+<div>
+    {% for item in recipes %}
+    <h1>{{ item }}</h1>
+        <ul>
+        <li>Time: </li>
+        </ul>
+    {% endfor %}
+</div>
+</body>
+</html>
