@@ -53,7 +53,25 @@ connection.execute("PRAGMA foreign_keys = 1")
 cursor = connection.cursor()
 
 cursor.execute("create table ingredients (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)")
-cursor.execute("create table recipes (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, img BLOB, level TEXT, duration_min INTEGER, servings INTEGER, instructions TEXT)")
+
+# levels table has to be created before recipe is created, otherwise I get an integrity error (FK constraint failed)
+cursor.execute("""CREATE TABLE level (
+      level_id INTEGER PRIMARY KEY AUTOINCREMENT,
+      level_name TEXT
+)""")
+
+cursor.execute("""CREATE TABLE recipe (
+      recipe_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+      recipe_name TEXT, 
+      level_id INTEGER NOT NULL, 
+      duration_min INTEGER, 
+      instructions TEXT,
+      FOREIGN KEY (level_id) REFERENCES level(level_id)
+)""")
+
+
+
+
 
 for i in range(len(ingredients)):
   cursor.execute("insert into ingredients (name) values (?)",[ingredients[i]])
