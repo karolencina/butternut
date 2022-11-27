@@ -35,8 +35,8 @@ ingredients = [
 ]
 
 recipes = [
-  ("Hummus", "easy", 30, 1, "Mix chickpea and tahini together. Add garlic and olive oil."),
-  ("Toast", "easy", 20, 1, "Cut a slice of bread. Top it with cream cheese, sun-dried tomatoes, and rocket.")
+  ("Hummus", 1, 30, "1. Blend chickpea and Tahini \n2. Add lemon juice."),
+  ("Toast", 1, 20, "1. Cut a slice of bread. \n2. Place sun-dried tomatoes, avocado and rocket on top.")
 ]
 
 ingredients = sorted(ingredients)
