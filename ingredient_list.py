@@ -49,6 +49,7 @@ levels = [
 ingredients = sorted(ingredients)
 
 connection = sqlite3.connect("recipes.db")
+connection.execute("PRAGMA foreign_keys = 1")
 cursor = connection.cursor()
 
 cursor.execute("create table ingredients (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)")
