@@ -39,6 +39,13 @@ recipes = [
   ("Toast", 1, 20, "1. Cut a slice of bread. \n2. Place sun-dried tomatoes, avocado and rocket on top.")
 ]
 
+levels = [
+  ("easy"),
+  ("medium"),
+  ("hard")
+]
+
+
 ingredients = sorted(ingredients)
 
 connection = sqlite3.connect("recipes.db")
