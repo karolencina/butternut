@@ -77,7 +77,11 @@ for i in range(len(ingredients)):
   cursor.execute("insert into ingredients (name) values (?)",[ingredients[i]])
   print("added ", ingredients[i])
 
-cursor.executemany("insert into recipes (name, level, duration_min, servings, instructions) values (?,?,?,?,?)", recipes)
+for i in range(len(levels)):
+  cursor.execute("insert into level (level_name) values (?)", [levels[i]])
+  print("added ", levels[i])
+
+cursor.executemany("INSERT INTO recipe (recipe_name, level_id, duration_min, instructions) VALUES (?,?,?,?)", recipes)
 print("added ", recipes)
 
 
