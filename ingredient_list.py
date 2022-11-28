@@ -7,6 +7,7 @@ ingredients = [
   "banana",
   "dill",
   "egg",
+  "avocado",
   "flour",
   "granola",
   "honey",
