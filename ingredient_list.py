@@ -40,6 +40,11 @@ recipes = [
   ("Toast", 1, 20, "1. Cut a slice of bread. \n2. Place sun-dried tomatoes, avocado and rocket on top.")
 ]
 
+recipe_ingredients = [
+  (2, 5, 1/2, None, "sliced"),
+  (2, 2, 2, "tbsp", "grated")
+]
+
 levels = [
   ("easy"),
   ("medium"),
