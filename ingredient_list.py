@@ -96,7 +96,7 @@ cursor.execute("""CREATE TABLE recipe_ingredient (
 
 
 for i in range(len(ingredients)):
-  cursor.execute("insert into ingredients (name) values (?)",[ingredients[i]])
+  cursor.execute("insert into ingredient (ingredient_name) values (?)",[ingredients[i]])
   print("added ", ingredients[i])
 
 for i in range(len(levels)):
