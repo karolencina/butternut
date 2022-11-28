@@ -106,6 +106,18 @@ for i in range(len(levels)):
 cursor.executemany("INSERT INTO recipe (recipe_name, level_id, duration_min, instructions) VALUES (?,?,?,?)", recipes)
 print("added ", recipes)
 
+cursor.executemany("INSERT INTO recipe_ingredient (recipe_id, ingredient_id, quantity, unit, prep) VALUES (?,?,?,?,?)", recipe_ingredients)
+print(recipe_ingredients)
+
+sql = """SELECT recipe.recipe_id, recipe.recipe_name, level.level_name,
+          recipe.duration_min
+          FROM recipe_ingredient
+          INNER JOIN recipe ON recipe_ingredient.recipe_id = recipe.recipe_id
+          INNER JOIN level ON level.level_id = recipe.level_id"""
+
+sql = connection.execute(sql)
+for a in sql:
+  print(a)
 
 connection.commit()
 connection.close()
