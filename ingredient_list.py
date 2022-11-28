@@ -58,7 +58,15 @@ connection = sqlite3.connect("recipes.db")
 connection.execute("PRAGMA foreign_keys = 1")
 cursor = connection.cursor()
 
-cursor.execute("create table ingredients (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)")
+cursor.execute("DROP TABLE recipe_ingredient")
+cursor.execute("DROP TABLE recipe")
+cursor.execute("DROP TABLE level")
+cursor.execute("DROP TABLE ingredient")
+
+cursor.execute("""CREATE TABLE ingredient (
+      ingredient_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+      ingredient_name TEXT
+)""")
 
 # levels table has to be created before recipe is created, otherwise I get an integrity error (FK constraint failed)
 cursor.execute("""CREATE TABLE level (
