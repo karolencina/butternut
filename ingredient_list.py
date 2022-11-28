@@ -46,9 +46,9 @@ recipe_ingredients = [
 ]
 
 levels = [
-  ("easy"),
-  ("medium"),
-  ("hard")
+  "easy",
+  "medium",
+  "hard"
 ]
 
 
