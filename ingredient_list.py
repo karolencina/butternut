@@ -83,8 +83,16 @@ cursor.execute("""CREATE TABLE recipe (
       FOREIGN KEY (level_id) REFERENCES level(level_id)
 )""")
 
-
-
+cursor.execute("""CREATE TABLE recipe_ingredient (
+      recipe_ingredient_id INTEGER PRIMARY KEY AUTOINCREMENT,
+      recipe_id INTEGER, 
+      ingredient_id INTEGER,
+      quantity INTEGER, 
+      unit TEXT, 
+      prep TEXT,
+      FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id)
+      FOREIGN KEY (ingredient_id) REFERENCES ingredient(ingredient_id)
+)""")
 
 
 for i in range(len(ingredients)):
