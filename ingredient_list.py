@@ -77,7 +77,7 @@ cursor.execute("""CREATE TABLE level (
 cursor.execute("""CREATE TABLE recipe (
       recipe_id INTEGER PRIMARY KEY AUTOINCREMENT, 
       recipe_name TEXT, 
-      level_id INTEGER NOT NULL, 
+      level_id INTEGER, 
       duration_min INTEGER, 
       instructions TEXT,
       FOREIGN KEY (level_id) REFERENCES level(level_id)
