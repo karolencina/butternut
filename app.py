@@ -32,6 +32,18 @@ def get_db():
         all_recipes = [str(val[0]) for val in all_recipes]
     return all_ingredients, all_recipes
 
+
+def get_all_data():
+    db = getattr(g, '_database', None)
+    if db is None:
+        db = g._database = sqlite3.connect('recipes.db')
+        cursor = db.cursor()
+        cursor.execute("SELECT * FROM recipe_ingredient")
+        all_connections = cursor.fetchall()
+        all_connections = [str(val[0]) for val in all_connections]
+    return all_connections
+
+
 @app.teardown_appcontext
 def close_connection(exception):
     db = getattr(g, '_database', None)
