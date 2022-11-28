@@ -14,21 +14,20 @@ def index():
     # the all_data below is what is reference in index.html, the name has to be the same
     return render_template("index.html", recipes = recipes, ingredients = ingredients)
 
-
-@app.route("/add_items", methods=["POST"])
-def add_items():
-    return request.form["select_items"]
-
+@app.route("/all-recipes")
+def all_recipes():
+    data = get_all_data()
+    return render_template("all-recipes.html", connections = data)
 
 def get_db():
     db = getattr(g, '_database', None)
     if db is None:
         db = g._database = sqlite3.connect('recipes.db')
         cursor = db.cursor()
-        cursor.execute("select name from ingredients")
+        cursor.execute("select ingredient_name from ingredient")
         all_ingredients = cursor.fetchall()
         all_ingredients = [str(val[0]) for val in all_ingredients]
-        cursor.execute("select name from recipes")
+        cursor.execute("select recipe_name from recipe")
         all_recipes = cursor.fetchall()
         all_recipes = [str(val[0]) for val in all_recipes]
     return all_ingredients, all_recipes
