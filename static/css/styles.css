@@ -1,0 +1,138 @@
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro-2');
+@import url('https://fonts.cdnfonts.com/css/open-sauce-one');
+
+@font-face {
+    font-family: "Helvetica Neue";
+}
+
+/*** Variables ***/
+
+:root {
+    --c-black: hsl(0 0% 0%);
+    --c-white: hsl(0, 0%, 100%);
+    --c-grey: hsl(0, 0%, 55%);
+    --c-primary: hsl(36, 100%, 76%);
+    --c-secondary: hsl(241, 100%, 83%);
+
+    --f-size-nav: 1.3em;
+
+    --padding: 20px;
+}
+
+/*** Styles ***/
+
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+.grid {
+    display: grid;
+    position: relative;
+    grid-template-columns: 3fr 5fr 5fr 5fr;
+    grid-template-rows: 150px minmax(100px, auto);
+}
+
+h1, h2, h3, h4, nav {
+    font-weight: 500;
+    letter-spacing: -0.025em;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+ul, li {
+  padding-left: 0;
+  list-style: none;
+}
+
+/*.nav-container {*/
+/*    position: fixed;*/
+/*    top: 0px;*/
+/*    height: 100%;*/
+/*    background: var(--c-white);*/
+/*    border-right: solid var(--c-black);*/
+/*}*/
+
+.header {
+    position: sticky;
+    top: 0;
+    padding: var(--padding);
+    grid-column: 2 / -1;
+    border-bottom: solid var(--c-black);
+    background: var(--c-white);
+}
+
+.nav {
+    align-self: flex-start;
+    position: sticky;
+    top: 0px;
+    height: 100vh;
+    grid-row: 1 / -1;
+    background: var(--c-white);
+    border-right: solid var(--c-black);
+}
+
+.nav-link {
+    text-decoration: none;
+    display: block;
+    padding: var(--padding);
+    font-size: var(--f-size-nav);
+    color: var(--c-black);
+    border-bottom: solid var(--c-black);
+}
+
+.nav-link:hover {
+    color: var(--c-secondary);
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    padding: calc((150px - 80px - 1.2px) / 2);
+}
+
+.logo {
+    height: 80px;
+}
+
+.content {
+    grid-column: 2 / -1;
+    grid-row-start: 2;
+}
+
+.ingredients {
+}
+
+.recipe-container {
+    border: solid black;
+    background-color: var(--c-white);
+    margin: 50px;
+    padding: var(--padding);
+}
+
+#shape-primary {
+    width: 600px;
+    height: 600px;
+    position: fixed;
+    top: 80px;
+    right: -120px;
+    border-radius: 50%;
+    filter: blur(50px);
+    background: var(--c-primary);
+    z-index: -1;
+}
+#shape-secondary {
+    width: 600px;
+    height: 600px;
+    position: fixed;
+    top: 300px;
+    right: 0px;
+    border-radius: 60%;
+    filter: blur(80px);
+    background: var(--c-secondary);
+    opacity: 60%;
+    z-index: -2;
+}
