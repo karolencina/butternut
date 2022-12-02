@@ -103,14 +103,15 @@ ul, li {
     grid-row-start: 2;
 }
 
-.ingredients {
-}
-
 .recipe-container {
     border: solid black;
     background-color: var(--c-white);
     margin: 50px;
     padding: var(--padding);
+}
+
+.about {
+    padding: 50px;
 }
 
 #shape-primary {
