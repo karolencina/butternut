@@ -6,16 +6,21 @@
     the "render_template()" second param -->
     {% for col in data %}
         <div class="recipe-container">
-            <h2 class="name">{{ col[1] }}</h2>
-
-        <ul class="basic-info">
-            <li>{{ col[2] }}</li>
-            <li>{{ col[3] }}</li>
-        </ul>
-        <h3>Ingredients</h3>
-        <ul class="ingredients">{{ col[6] }}</ul>
-        <h3>Instructions</h3>
-        <ul class="instructions">{{ col[5] }}</ul>
+            <div class="container-basic">
+                <h2 class="name">{{ col[1] }}</h2>
+                <ul>
+                    <li class="basic-info">Difficulty: <span style="font-weight: bold">{{ col[3] }}</span></li>
+                    <li class="basic-info">Duration: <span style="font-weight: bold">{{ col[4] }}</span></li>
+                </ul>
+            </div>
+            <div class="container-ingred">
+                <h3>Ingredients</h3>
+                <ul class="ingredients">{{ col[6] }}</ul>
+            </div>
+            <div class="container-instruc">
+                <h3>Instructions</h3>
+                <ol class="instructions">{{ col[5] }}</ol>
+            </div>
         </div>
     {% endfor %}
 {% endblock %}
