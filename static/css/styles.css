@@ -43,18 +43,13 @@ h1 {
     font-size: 3em;
 }
 
-ul, li {
-  padding-left: 0;
-  list-style: none;
+ul, ol {
+    padding-left: 0px;
 }
 
-/*.nav-container {*/
-/*    position: fixed;*/
-/*    top: 0px;*/
-/*    height: 100%;*/
-/*    background: var(--c-white);*/
-/*    border-right: solid var(--c-black);*/
-/*}*/
+ul {
+  list-style-type: square;
+}
 
 .header {
     position: sticky;
@@ -107,7 +102,24 @@ ul, li {
     border: solid black;
     background-color: var(--c-white);
     margin: 50px;
-    padding: var(--padding);
+    padding: 0;
+}
+
+.container-basic, .container-ingred, .container-instruc {
+    padding: 0px 30px;
+}
+
+.container-basic {
+    border-bottom: solid var(--c-black);
+}
+
+.basic-info {
+    display: inline-block;
+    padding-right: var(--padding);
+}
+
+.ingredients, .instructions, .tech-stack {
+    padding-left: 15px;
 }
 
 .about {
