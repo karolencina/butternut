@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}All recipes{% endblock %}
+{% block h1 %}All recipes{% endblock %}
+{% block content %}
+ <!-- "recipe_name" need to have the same name as
+    the "render_template()" second param -->
+    {% for col in data %}
+        <div class="recipe-container">
+            <h2 class="name">{{ col[1] }}</h2>
+
+        <ul class="basic-info">
+            <li>{{ col[2] }}</li>
+            <li>{{ col[3] }}</li>
+        </ul>
+        <h3>Ingredients</h3>
+        <ul class="ingredients">{{ col[6] }}</ul>
+        <h3>Instructions</h3>
+        <ul class="instructions">{{ col[5] }}</ul>
+        </div>
+    {% endfor %}
+{% endblock %}

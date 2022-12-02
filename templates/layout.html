@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+{# Head #}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} | Butternut Squash</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="grid">
+{# Header#}
+<header class="header"><h1>{% block h1 %}{% endblock %}</h1></header>
+{# Nav #}
+    <nav class="nav">
+        <a class="nav-link" id="logo"><img class="logo" src="{{ url_for('static', filename='files/logo.svg') }}" alt="logo"></a>
+        <a class="nav-link" href="{{ url_for("all_recipes") }}">All recipes</a>
+        <a class="nav-link" href="{{ url_for("about") }}">About</a>
+    </nav>
+{# Content #}
+<div class="content">
+{% block content %}
+{% endblock %}
+</div>
+</div>
+<div id="shape-primary"></div>
+<div id="shape-secondary"></div>
+<script src="static/js/app.js"></script>
+</body>
+</html>
