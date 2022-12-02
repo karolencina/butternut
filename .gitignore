@@ -2,3 +2,4 @@
 .idea/
 *.db
 static/files/img-db/
+*.pyc
