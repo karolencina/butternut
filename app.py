@@ -10,8 +10,8 @@ app.secret_key = "asfubre845*^&%uvdjshd*&uikjsd><;.f"
 
 def encode_file(filename):
     with open(filename, 'wb') as file:
-        data = file.write(filename)
-    return data
+        img = file.write(filename)
+    return img
 
 
 @app.route("/")
